@@ -7,7 +7,7 @@ describe("Upload video, image", function () {
     before(async function () {
         // Khởi tạo WebDriver
         driver = await new Builder().forBrowser("chrome").build();
-        await driver.get("http://localhost:3000");
+        await driver.get("http://ec2-3-92-184-188.compute-1.amazonaws.com");
         await driver.sleep(2000);
         //Login
         await driver.findElement(By.id("mui-1")).click();
@@ -29,7 +29,9 @@ describe("Upload video, image", function () {
 
     beforeEach(async function () {
         // Điều hướng đến trang web trước mỗi test case
-        await driver.get("http://localhost:3000/gallery");
+        await driver.get(
+            "http://ec2-3-92-184-188.compute-1.amazonaws.com/gallery"
+        );
         await driver.sleep(2000);
     });
 

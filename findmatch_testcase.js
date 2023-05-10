@@ -30,7 +30,9 @@ describe("Find match", function () {
 
     beforeEach(async function () {
         // Điều hướng đến trang web trước mỗi test case
-        await driver.get("http://localhost:3000/highlight");
+        await driver.get(
+            "http://ec2-3-92-184-188.compute-1.amazonaws.com/highlight"
+        );
         await driver.sleep(2000);
     });
 

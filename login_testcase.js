@@ -16,7 +16,9 @@ describe("Đăng nhập", function () {
 
     beforeEach(async function () {
         // Điều hướng đến trang web trước mỗi test case
-        await driver.get("http://localhost:3000/login");
+        await driver.get(
+            "http://ec2-3-92-184-188.compute-1.amazonaws.com/login"
+        );
     });
 
     it("Test Case 1: Sai tài khoản", async () => {

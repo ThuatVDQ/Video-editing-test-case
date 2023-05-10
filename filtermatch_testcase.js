@@ -7,7 +7,7 @@ describe("Filter match", function () {
     before(async function () {
         // Khởi tạo WebDriver
         driver = await new Builder().forBrowser("chrome").build();
-        await driver.get("http://localhost:3000");
+        await driver.get("http://ec2-54-163-229-0.compute-1.amazonaws.com");
         await driver.sleep(2000);
         //Login
         await driver.findElement(By.id("mui-1")).click();
@@ -29,10 +29,10 @@ describe("Filter match", function () {
 
     beforeEach(async function () {
         // Điều hướng đến trang web trước mỗi test case
-        await driver.get("http://localhost:3000");
+        await driver.get("http://ec2-54-163-229-0.compute-1.amazonaws.com/");
         await driver.sleep(2000);
     });
-    /*
+
     it("Test Case 1: lọc theo tên giải đấu", async () => {
         await driver
             .findElement(
@@ -140,7 +140,7 @@ describe("Filter match", function () {
 
         await driver.findElement(By.xpath("//div[2]/button")).click();
     });
-*/
+
     it("Test Case 4: lọc theo chanel giải đấu", async () => {
         await driver.findElement(By.xpath("//th[4]/div/span[2]")).click();
 

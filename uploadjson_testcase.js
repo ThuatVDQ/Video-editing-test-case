@@ -7,7 +7,7 @@ describe("Upload file json", () => {
     before(async function () {
         // Khởi tạo WebDriver
         driver = await new Builder().forBrowser("chrome").build();
-        await driver.get("http://localhost:3000");
+        await driver.get("http://ec2-3-92-184-188.compute-1.amazonaws.com");
         await driver.sleep(2000);
         //Login
         await driver.findElement(By.id("mui-1")).click();
@@ -29,7 +29,7 @@ describe("Upload file json", () => {
 
     beforeEach(async function () {
         // Điều hướng đến trang web trước mỗi test case
-        await driver.get("http://localhost:3000/");
+        await driver.get("http://ec2-3-92-184-188.compute-1.amazonaws.com/");
     });
 
     //Upload json file cho trận đấu đầu tiên

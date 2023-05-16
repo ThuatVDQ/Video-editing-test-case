@@ -6,16 +6,16 @@ const mochawesome = require("mochawesome");
 mocha.timeout(15000);
 
 // Load test cases from files
-mocha.addFile("./test/addmatch_testcase.js");
-mocha.addFile("./test/deletevideo_testcase.js");
-mocha.addFile("./test/filtermatch_testcase.js");
-mocha.addFile("./test/filtervideo_testcase.js");
-mocha.addFile("./test/findmatch_testcase.js");
-mocha.addFile("./test/login_testcase.js");
-mocha.addFile("./test/logout_testcase.js");
-//mocha.addFile("./test/deletevideo_testcase.js");
-mocha.addFile("./test/uploadjson_testcase.js");
-mocha.addFile("./test/uploadvideo_testcase.js");
+mocha.addFile("./addmatch_testcase.js");
+mocha.addFile("./deletevideo_testcase.js");
+mocha.addFile("./filtermatch_testcase.js");
+mocha.addFile("./filtervideo_testcase.js");
+mocha.addFile("./findmatch_testcase.js");
+mocha.addFile("./login_testcase.js");
+mocha.addFile("./logout_testcase.js");
+//mocha.addFile("./deletevideo_testcase.js");
+mocha.addFile("./uploadjson_testcase.js");
+mocha.addFile("./uploadvideo_testcase.js");
 
 // Set options for report
 const reportDir = path.join(__dirname);

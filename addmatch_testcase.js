@@ -1,14 +1,15 @@
 const { Builder, By, Key, until } = require("selenium-webdriver");
 const assert = require("assert");
-
+require("dotenv").config();
+const URL = process.env.AWS_ENDPOINT;
 describe("Add match", () => {
     let driver;
 
     before(async function () {
         // Khởi tạo WebDriver
         driver = await new Builder().forBrowser("chrome").build();
-        await driver.get("http://ec2-54-163-229-0.compute-1.amazonaws.com/");
-        await driver.sleep(2000);
+        await driver.get(URL);
+        await driver.sleep(1000);
         //Login
         await driver.findElement(By.id("mui-1")).click();
         await driver.findElement(By.id("mui-1")).sendKeys("test12");
@@ -28,8 +29,7 @@ describe("Add match", () => {
     });
 
     beforeEach(async function () {
-        // Điều hướng đến trang web trước mỗi test case
-        await driver.get("http://ec2-54-163-229-0.compute-1.amazonaws.com/");
+        await driver.get(URL);
         await driver.sleep(2000);
     });
 
@@ -47,7 +47,7 @@ describe("Add match", () => {
         await driver.findElement(By.id("mui-10")).sendKeys("127.0.0.1");
         await driver.findElement(By.id("mui-11")).sendKeys("3000");
         await driver.findElement(By.css(".MuiButton-root")).click();
-        await driver.sleep(5000);
+        await driver.sleep(2000);
     });
 
     it("Test Case 2: Thêm trận đấu (Chọn league name có sẵn)", async () => {
@@ -60,6 +60,6 @@ describe("Add match", () => {
         await driver.findElement(By.id("mui-10")).sendKeys("127.0.0.1");
         await driver.findElement(By.id("mui-11")).sendKeys("3000");
         await driver.findElement(By.css(".MuiButton-root")).click();
-        await driver.sleep(5000);
+        await driver.sleep(2000);
     });
 });

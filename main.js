@@ -1,13 +1,21 @@
-// main.js
 const Mocha = require("mocha");
 const mocha = new Mocha();
 const fs = require("fs");
 const path = require("path");
 const mochawesome = require("mochawesome");
+mocha.timeout(15000);
 
 // Load test cases from files
-mocha.addFile("addmatch_testcase.js");
-mocha.addFile("deletevideo_testcase.js");
+mocha.addFile("./test/addmatch_testcase.js");
+mocha.addFile("./test/deletevideo_testcase.js");
+mocha.addFile("./test/filtermatch_testcase.js");
+mocha.addFile("./test/filtervideo_testcase.js");
+mocha.addFile("./test/findmatch_testcase.js");
+mocha.addFile("./test/login_testcase.js");
+mocha.addFile("./test/logout_testcase.js");
+//mocha.addFile("./test/deletevideo_testcase.js");
+mocha.addFile("./test/uploadjson_testcase.js");
+mocha.addFile("./test/uploadvideo_testcase.js");
 
 // Set options for report
 const reportDir = path.join(__dirname);
@@ -21,9 +29,7 @@ mocha.reporter(mochawesome, {
         reportUseInlineAssets: true,
     },
 });
-
 // Run the test suite
 mocha.run(function (failures) {
-    console.log(failures);
     process.exitCode = failures ? 1 : 0;
 });

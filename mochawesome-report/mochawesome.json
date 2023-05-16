@@ -5,20 +5,20 @@
     "passes": 0,
     "pending": 0,
     "failures": 0,
-    "start": "2023-05-10T10:16:35.670Z",
-    "end": "2023-05-10T10:16:44.042Z",
-    "duration": 8372,
+    "start": "2023-05-10T10:30:02.066Z",
+    "end": "2023-05-10T10:30:07.141Z",
+    "duration": 5075,
     "testsRegistered": 3,
     "passPercent": 0,
     "pendingPercent": 0,
-    "other": 4,
+    "other": 3,
     "hasOther": true,
     "skipped": 3,
     "hasSkipped": true
   },
   "results": [
     {
-      "uuid": "f37c9b5e-1800-42f8-bc93-9558fd9e93dd",
+      "uuid": "433139ac-2ced-45f2-b6b5-89931b9e5e63",
       "title": "",
       "fullFile": "",
       "file": "",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "53c6d4e1-b2f3-40ac-ba43-1534929eeeb3",
+          "uuid": "30d3d94d-b3d2-4b83-8d22-fc7b80a14a44",
           "title": "Add match",
           "fullFile": "D:\\study\\HK2-3\\CongCu\\tc\\Video-editing-test-case\\addmatch_testcase.js",
           "file": "\\addmatch_testcase.js",
@@ -35,22 +35,22 @@
             {
               "title": "\"before all\" hook for \"Test Case 1: Thêm trận đấu (thêm league name mới)\"",
               "fullTitle": "Add match \"before all\" hook for \"Test Case 1: Thêm trận đấu (thêm league name mới)\"",
-              "timedOut": true,
-              "duration": 2207,
+              "timedOut": false,
+              "duration": 843,
               "state": "failed",
               "speed": null,
               "pass": false,
               "fail": true,
               "pending": false,
               "context": null,
-              "code": "// Khởi tạo WebDriver\ndriver = await new Builder().forBrowser(\"chrome\").build();\nawait driver.get(\"http://ec2-54-163-229-0.compute-1.amazonaws.com/\");\nawait driver.sleep(2000);\n//Login\nawait driver.findElement(By.id(\"mui-1\")).click();\nawait driver.findElement(By.id(\"mui-1\")).sendKeys(\"test12\");\nawait driver.findElement(By.id(\"mui-2\")).sendKeys(\"Abc1234@\");\nawait driver.findElement(By.css(\".MuiButton-root\")).click();\nawait driver.sleep(2000);\nassert(\n    (await driver\n        .findElement(By.css(\".MuiGrid-grid-xs-3:nth-child(1)\"))\n        .getText()) == \"League Name\"\n);",
+              "code": "// Khởi tạo WebDriver\ndriver = await new Builder().forBrowser(\"chrome\").build();\nawait driver.get(process.env.AWS_ENDPOINT);\nawait driver.sleep(2000);\n//Login\nawait driver.findElement(By.id(\"mui-1\")).click();\nawait driver.findElement(By.id(\"mui-1\")).sendKeys(\"test12\");\nawait driver.findElement(By.id(\"mui-2\")).sendKeys(\"Abc1234@\");\nawait driver.findElement(By.css(\".MuiButton-root\")).click();\nawait driver.sleep(2000);\nassert(\n    (await driver\n        .findElement(By.css(\".MuiGrid-grid-xs-3:nth-child(1)\"))\n        .getText()) == \"League Name\"\n);",
               "err": {
-                "message": "Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (D:\\study\\HK2-3\\CongCu\\tc\\Video-editing-test-case\\addmatch_testcase.js)",
-                "estack": "Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (D:\\study\\HK2-3\\CongCu\\tc\\Video-editing-test-case\\addmatch_testcase.js)\n    at listOnTimeout (node:internal/timers:559:17)\n    at processTimers (node:internal/timers:502:7)",
+                "message": "InvalidArgumentError: invalid argument\n  (Session info: chrome=112.0.5615.140)",
+                "estack": "InvalidArgumentError: invalid argument\n  (Session info: chrome=112.0.5615.140)\n    at Object.throwDecodedError (node_modules\\selenium-webdriver\\lib\\error.js:524:15)\n    at parseHttpResponse (node_modules\\selenium-webdriver\\lib\\http.js:587:13)\n    at Executor.execute (node_modules\\selenium-webdriver\\lib\\http.js:515:28)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async Driver.execute (node_modules\\selenium-webdriver\\lib\\webdriver.js:745:17)\n    at async Context.<anonymous> (addmatch_testcase.js:10:9)",
                 "diff": null
               },
-              "uuid": "e6b888be-9ab3-4bc1-8848-1aea0f179509",
-              "parentUUID": "53c6d4e1-b2f3-40ac-ba43-1534929eeeb3",
+              "uuid": "a89ad89b-b54b-489d-8a77-5f0474242473",
+              "parentUUID": "30d3d94d-b3d2-4b83-8d22-fc7b80a14a44",
               "isHook": true,
               "skipped": false
             },
@@ -67,32 +67,28 @@
               "context": null,
               "code": "// Điều hướng đến trang web trước mỗi test case\nawait driver.get(\"http://ec2-54-163-229-0.compute-1.amazonaws.com/\");\nawait driver.sleep(2000);",
               "err": {},
-              "uuid": "79ba2dc9-b071-4570-8275-053295638e14",
-              "parentUUID": "53c6d4e1-b2f3-40ac-ba43-1534929eeeb3",
+              "uuid": "287511dd-98e7-49a2-b366-d81b062f64d6",
+              "parentUUID": "30d3d94d-b3d2-4b83-8d22-fc7b80a14a44",
               "isHook": true,
               "skipped": false
             }
           ],
           "afterHooks": [
             {
-              "title": "\"after all\" hook for \"Test Case 2: Thêm trận đấu (Chọn league name có sẵn)\"",
-              "fullTitle": "Add match \"after all\" hook for \"Test Case 2: Thêm trận đấu (Chọn league name có sẵn)\"",
-              "timedOut": true,
-              "duration": 2004,
-              "state": "failed",
+              "title": "\"after all\" hook in \"Add match\"",
+              "fullTitle": "Add match \"after all\" hook in \"Add match\"",
+              "timedOut": false,
+              "duration": 65,
+              "state": null,
               "speed": null,
               "pass": false,
-              "fail": true,
+              "fail": false,
               "pending": false,
               "context": null,
               "code": "// Đóng WebDriver sau khi hoàn thành tất cả các test case\nawait driver.quit();",
-              "err": {
-                "message": "Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (D:\\study\\HK2-3\\CongCu\\tc\\Video-editing-test-case\\addmatch_testcase.js)",
-                "estack": "Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (D:\\study\\HK2-3\\CongCu\\tc\\Video-editing-test-case\\addmatch_testcase.js)\n    at listOnTimeout (node:internal/timers:559:17)\n    at processTimers (node:internal/timers:502:7)",
-                "diff": null
-              },
-              "uuid": "ed48d299-ce9e-43b1-8196-13fc6bb2791e",
-              "parentUUID": "53c6d4e1-b2f3-40ac-ba43-1534929eeeb3",
+              "err": {},
+              "uuid": "e1bcd187-18a7-46aa-b491-4a92a4e4a382",
+              "parentUUID": "30d3d94d-b3d2-4b83-8d22-fc7b80a14a44",
               "isHook": true,
               "skipped": false
             }
@@ -111,8 +107,8 @@
               "context": null,
               "code": "await driver\n    .findElement(\n        By.css(\"div:nth-child(1) > div > .MuiIconButton-colorPrimary\")\n    )\n    .click();\nawait driver.findElement(By.id(\"mui-6\")).sendKeys(\"V League\");\nawait driver\n    .findElement(By.id(\"mui-7\"))\n    .sendKeys(\"Viet Nam - Thai Lan\");\nawait driver.findElement(By.id(\"mui-9\")).sendKeys(\"VTV3\");\nawait driver.findElement(By.id(\"mui-10\")).sendKeys(\"127.0.0.1\");\nawait driver.findElement(By.id(\"mui-11\")).sendKeys(\"3000\");\nawait driver.findElement(By.css(\".MuiButton-root\")).click();\nawait driver.sleep(5000);",
               "err": {},
-              "uuid": "014c57ea-88d8-4c00-a977-edfa245bdf0c",
-              "parentUUID": "53c6d4e1-b2f3-40ac-ba43-1534929eeeb3",
+              "uuid": "aa1e90ba-aecc-4d0e-b57e-b82bc313f60d",
+              "parentUUID": "30d3d94d-b3d2-4b83-8d22-fc7b80a14a44",
               "isHook": false,
               "skipped": true
             },
@@ -129,8 +125,8 @@
               "context": null,
               "code": "await driver.findElement(By.id(\"mui-5\")).click();\nawait driver.findElement(By.id(\"mui-5-option-0\")).click();\nawait driver\n    .findElement(By.id(\"mui-7\"))\n    .sendKeys(\"Viet Nam - Thai Lan\");\nawait driver.findElement(By.id(\"mui-9\")).sendKeys(\"VTV3\");\nawait driver.findElement(By.id(\"mui-10\")).sendKeys(\"127.0.0.1\");\nawait driver.findElement(By.id(\"mui-11\")).sendKeys(\"3000\");\nawait driver.findElement(By.css(\".MuiButton-root\")).click();\nawait driver.sleep(5000);",
               "err": {},
-              "uuid": "fa9e3761-3d42-418e-9d8e-a0e232ff770a",
-              "parentUUID": "53c6d4e1-b2f3-40ac-ba43-1534929eeeb3",
+              "uuid": "e70e6b16-b6f5-4837-af00-a9920c83c4d0",
+              "parentUUID": "30d3d94d-b3d2-4b83-8d22-fc7b80a14a44",
               "isHook": false,
               "skipped": true
             }
@@ -140,8 +136,8 @@
           "failures": [],
           "pending": [],
           "skipped": [
-            "014c57ea-88d8-4c00-a977-edfa245bdf0c",
-            "fa9e3761-3d42-418e-9d8e-a0e232ff770a"
+            "aa1e90ba-aecc-4d0e-b57e-b82bc313f60d",
+            "e70e6b16-b6f5-4837-af00-a9920c83c4d0"
           ],
           "duration": 0,
           "root": false,
@@ -149,7 +145,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "9855a583-29f4-4c33-83c2-ab3e4e48bb14",
+          "uuid": "fde815e2-5c47-4eec-a948-7d2fcf96f396",
           "title": "Delete video, image",
           "fullFile": "D:\\study\\HK2-3\\CongCu\\tc\\Video-editing-test-case\\deletevideo_testcase.js",
           "file": "\\deletevideo_testcase.js",
@@ -158,7 +154,7 @@
               "title": "\"before all\" hook for \"Test Case 1: Xóa hình ảnh, video đầu tiên\"",
               "fullTitle": "Delete video, image \"before all\" hook for \"Test Case 1: Xóa hình ảnh, video đầu tiên\"",
               "timedOut": true,
-              "duration": 2147,
+              "duration": 2145,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -171,8 +167,8 @@
                 "estack": "Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (D:\\study\\HK2-3\\CongCu\\tc\\Video-editing-test-case\\deletevideo_testcase.js)\n    at listOnTimeout (node:internal/timers:559:17)\n    at processTimers (node:internal/timers:502:7)",
                 "diff": null
               },
-              "uuid": "423a6df0-a861-4a1a-a00f-347f1b23f7f5",
-              "parentUUID": "9855a583-29f4-4c33-83c2-ab3e4e48bb14",
+              "uuid": "334bc433-50fb-4397-92b9-711b5d959455",
+              "parentUUID": "fde815e2-5c47-4eec-a948-7d2fcf96f396",
               "isHook": true,
               "skipped": false
             },
@@ -189,8 +185,8 @@
               "context": null,
               "code": "// Điều hướng đến trang web trước mỗi test case\nawait driver.get(\n    \"http://ec2-3-92-184-188.compute-1.amazonaws.com/gallery\"\n);\nawait driver.sleep(2000);",
               "err": {},
-              "uuid": "6d659596-bcbe-4d79-a412-51dfb1b3a366",
-              "parentUUID": "9855a583-29f4-4c33-83c2-ab3e4e48bb14",
+              "uuid": "a0615872-3ba3-49e7-8070-f92eb5510477",
+              "parentUUID": "fde815e2-5c47-4eec-a948-7d2fcf96f396",
               "isHook": true,
               "skipped": false
             }
@@ -200,7 +196,7 @@
               "title": "\"after all\" hook for \"Test Case 1: Xóa hình ảnh, video đầu tiên\"",
               "fullTitle": "Delete video, image \"after all\" hook for \"Test Case 1: Xóa hình ảnh, video đầu tiên\"",
               "timedOut": true,
-              "duration": 2001,
+              "duration": 2011,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -213,8 +209,8 @@
                 "estack": "Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (D:\\study\\HK2-3\\CongCu\\tc\\Video-editing-test-case\\deletevideo_testcase.js)\n    at listOnTimeout (node:internal/timers:559:17)\n    at processTimers (node:internal/timers:502:7)",
                 "diff": null
               },
-              "uuid": "269e85a0-24a7-4083-adec-b5705b413a71",
-              "parentUUID": "9855a583-29f4-4c33-83c2-ab3e4e48bb14",
+              "uuid": "41acd839-da20-4722-adfb-c375a3a11e64",
+              "parentUUID": "fde815e2-5c47-4eec-a948-7d2fcf96f396",
               "isHook": true,
               "skipped": false
             }
@@ -233,8 +229,8 @@
               "context": null,
               "code": "await driver\n    .findElement(\n        By.xpath(\n            \"/html/body/div/div/div/main/div/div/div[3]/div[1]/div/div[1]/button\"\n        )\n    )\n    .click();\nawait driver.findElement(By.css(\".ant-btn-primary > span\")).click();\nawait driver.sleep(2000);\nassert(\n    (await driver\n        .findElement(By.css(\".MuiPaper-elevation0\"))\n        .getText()) == \"Delete Succeed\"\n);",
               "err": {},
-              "uuid": "45a0045a-1622-4bc9-987f-e451f758f6df",
-              "parentUUID": "9855a583-29f4-4c33-83c2-ab3e4e48bb14",
+              "uuid": "1e3bf7d8-16bb-4e53-8325-1e72dc1245e7",
+              "parentUUID": "fde815e2-5c47-4eec-a948-7d2fcf96f396",
               "isHook": false,
               "skipped": true
             }
@@ -244,7 +240,7 @@
           "failures": [],
           "pending": [],
           "skipped": [
-            "45a0045a-1622-4bc9-987f-e451f758f6df"
+            "1e3bf7d8-16bb-4e53-8325-1e72dc1245e7"
           ],
           "duration": 0,
           "root": false,

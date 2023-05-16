@@ -1,13 +1,14 @@
 const { Builder, By, Key, until } = require("selenium-webdriver");
 const assert = require("assert");
-
+require("dotenv").config();
+const URL = process.env.AWS_ENDPOINT;
 describe("Log out", function () {
     let driver;
 
     before(async function () {
         // Khởi tạo WebDriver
         driver = await new Builder().forBrowser("chrome").build();
-        await driver.get("http://ec2-3-92-184-188.compute-1.amazonaws.com");
+        await driver.get(URL);
         await driver.sleep(2000);
         //Login
         await driver.findElement(By.id("mui-1")).click();
@@ -29,7 +30,7 @@ describe("Log out", function () {
 
     beforeEach(async function () {
         // Điều hướng đến trang web trước mỗi test case
-        await driver.get("http://ec2-3-92-184-188.compute-1.amazonaws.com");
+        await driver.get(URL);
         await driver.sleep(2000);
     });
 

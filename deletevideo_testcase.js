@@ -1,6 +1,7 @@
 const { Builder, By, Key, until } = require("selenium-webdriver");
 const assert = require("assert");
-
+require("dotenv").config();
+const URL = process.env.AWS_ENDPOINT;
 describe("Delete video, image", function () {
     let driver;
 
@@ -8,7 +9,7 @@ describe("Delete video, image", function () {
         // Khởi tạo WebDriver
         driver = await new Builder().forBrowser("chrome").build();
         await driver.manage().window().setRect({ width: 1280, height: 1080 });
-        await driver.get("http://ec2-3-92-184-188.compute-1.amazonaws.com");
+        await driver.get(URL);
         await driver.sleep(2000);
         //Login
         await driver.findElement(By.id("mui-1")).click();
@@ -30,9 +31,7 @@ describe("Delete video, image", function () {
 
     beforeEach(async function () {
         // Điều hướng đến trang web trước mỗi test case
-        await driver.get(
-            "http://ec2-3-92-184-188.compute-1.amazonaws.com/gallery"
-        );
+        await driver.get(URL + "/gallery");
         await driver.sleep(2000);
     });
 

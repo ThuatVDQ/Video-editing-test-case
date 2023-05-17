@@ -7,7 +7,7 @@ const URL = process.env.AWS_ENDPOINT;
 async function createDriver() {
     const options = new chrome.Options();
     options.addArguments("--no-sandbox");
-
+    options.addArguments("--headless");
     const driver = await new Builder()
         .forBrowser("chrome")
         .setChromeOptions(options)

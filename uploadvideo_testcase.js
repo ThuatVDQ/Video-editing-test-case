@@ -49,7 +49,7 @@ describe("Upload video, image", function () {
 
         await driver.findElement(By.css(".MuiButton-root")).click();
 
-        await driver.sleep(3000);
+        await driver.sleep(5000);
 
         assert(
             (await driver
@@ -78,7 +78,7 @@ describe("Upload video, image", function () {
 
         await driver.findElement(By.css(".MuiButton-root")).click();
 
-        await driver.sleep(3000);
+        await driver.sleep(5000);
 
         assert(
             (await driver

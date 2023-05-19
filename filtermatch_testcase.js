@@ -51,7 +51,7 @@ describe("Filter match", function () {
             .takeScreenshot()
             .then((image) =>
                 require("fs").writeFileSync(
-                    "filterMatch-tc1.png",
+                    "result-images/filterMatch-tc1.png",
                     image,
                     "base64"
                 )
@@ -83,7 +83,7 @@ describe("Filter match", function () {
             .takeScreenshot()
             .then((image) =>
                 require("fs").writeFileSync(
-                    "filterMatch-tc2.png",
+                    "result-images/filterMatch-tc2.png",
                     image,
                     "base64"
                 )
@@ -127,7 +127,7 @@ describe("Filter match", function () {
             .takeScreenshot()
             .then((image) =>
                 require("fs").writeFileSync(
-                    "filterMatch-tc3.png",
+                    "result-images/filterMatch-tc3.png",
                     image,
                     "base64"
                 )
@@ -155,7 +155,7 @@ describe("Filter match", function () {
             .takeScreenshot()
             .then((image) =>
                 require("fs").writeFileSync(
-                    "filterMatch-tc4.png",
+                    "result-images/filterMatch-tc4.png",
                     image,
                     "base64"
                 )

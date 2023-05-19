@@ -28,7 +28,7 @@ describe("Đăng nhập", function () {
         await driver.findElement(By.id("mui-2")).sendKeys("Abc1234@");
         await driver.findElement(By.css(".MuiButton-root")).click();
 
-        await driver.sleep(5000);
+        await driver.sleep(3000);
 
         assert(
             (await driver
@@ -43,7 +43,7 @@ describe("Đăng nhập", function () {
         await driver.findElement(By.id("mui-2")).sendKeys("Abc12345");
         await driver.findElement(By.css(".MuiButton-root")).click();
 
-        await driver.sleep(5000);
+        await driver.sleep(3000);
 
         assert(
             (await driver

@@ -95,7 +95,7 @@ describe("Find match", function () {
             .takeScreenshot()
             .then((image) =>
                 require("fs").writeFileSync(
-                    "findMatch-tc1.png",
+                    "result-images/findMatch-tc1.png",
                     image,
                     "base64"
                 )

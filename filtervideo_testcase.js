@@ -56,7 +56,7 @@ describe("Filter video", function () {
             .takeScreenshot()
             .then((image) =>
                 require("fs").writeFileSync(
-                    "filterVideo-tc1.png",
+                    "result-images/filterVideo-tc1.png",
                     image,
                     "base64"
                 )

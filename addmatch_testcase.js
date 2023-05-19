@@ -1,3 +1,4 @@
+require('chromedriver');
 const { Builder, By, Key, until } = require("selenium-webdriver");
 const assert = require("assert");
 require("dotenv").config();

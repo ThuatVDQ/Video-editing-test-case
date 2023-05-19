@@ -1,4 +1,4 @@
-require('chromedriver');
+require("chromedriver");
 const { Builder, By, Key, until } = require("selenium-webdriver");
 const chrome = require("selenium-webdriver/chrome");
 const assert = require("assert");
@@ -7,13 +7,13 @@ const URL = process.env.AWS_ENDPOINT;
 async function createDriver() {
     const options = new chrome.Options();
     options.addArguments("--no-sandbox");
-    options.addArguments("--headless")
-    options.addArguments("window-size=1400,1500")
-    options.addArguments("--disable-gpu")
-    options.addArguments("start-maximized")
-    options.addArguments("enable-automation")
-    options.addArguments("--disable-infobars")
-    options.addArguments("--disable-dev-shm-usage")
+    options.addArguments("--headless");
+    options.addArguments("window-size=1400,1500");
+    options.addArguments("--disable-gpu");
+    options.addArguments("start-maximized");
+    options.addArguments("enable-automation");
+    options.addArguments("--disable-infobars");
+    options.addArguments("--disable-dev-shm-usage");
 
     const driver = await new Builder()
         .forBrowser("chrome")
@@ -71,7 +71,7 @@ describe("Filter match", function () {
             .takeScreenshot()
             .then((image) =>
                 require("fs").writeFileSync(
-                    "result-images/filterMatch-tc1.png",
+                    "./result-images/filterMatch-tc1.png",
                     image,
                     "base64"
                 )
@@ -103,7 +103,7 @@ describe("Filter match", function () {
             .takeScreenshot()
             .then((image) =>
                 require("fs").writeFileSync(
-                    "result-images/filterMatch-tc2.png",
+                    "./result-images/filterMatch-tc2.png",
                     image,
                     "base64"
                 )
@@ -147,7 +147,7 @@ describe("Filter match", function () {
             .takeScreenshot()
             .then((image) =>
                 require("fs").writeFileSync(
-                    "result-images/filterMatch-tc3.png",
+                    "./result-images/filterMatch-tc3.png",
                     image,
                     "base64"
                 )
@@ -175,7 +175,7 @@ describe("Filter match", function () {
             .takeScreenshot()
             .then((image) =>
                 require("fs").writeFileSync(
-                    "result-images/filterMatch-tc4.png",
+                    "./result-images/filterMatch-tc4.png",
                     image,
                     "base64"
                 )

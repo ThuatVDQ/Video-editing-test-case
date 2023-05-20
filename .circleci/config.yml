@@ -18,7 +18,7 @@ jobs:
       - run:
           name: Build and push Docker image
           command: |
-            docker build -t $DOCKERHUB_USERNAME/test-docker .
+            docker build -t $DOCKERHUB_USERNAME/test-docker:latest .
             docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
             docker push $DOCKERHUB_USERNAME/test-docker:latest
           working_directory: /home/circleci/project/test

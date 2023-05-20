@@ -14,14 +14,14 @@ jobs:
       - run:
           name: Install Dependencies
           command: npm install
-          working_directory: /home/circleci/test
+          working_directory: /home/circleci/Video-editing-test-case
       - run:
           name: Build and push Docker image
           command: |
             docker build -t $DOCKERHUB_USERNAME/test-docker:latest .
             docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
             docker push $DOCKERHUB_USERNAME/test-docker:latest
-          working_directory: /home/circleci/test
+          working_directory: /home/circleci/Video-editing-test-case
 workflows:
   build-and-deploy:
     jobs:
